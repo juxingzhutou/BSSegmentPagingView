@@ -1,0 +1,13 @@
+PODS:
+  - DZNSegmentedControl (1.3.2)
+  - Masonry (0.6.2)
+
+DEPENDENCIES:
+  - DZNSegmentedControl
+  - Masonry (= 0.6.2)
+
+SPEC CHECKSUMS:
+  DZNSegmentedControl: b78b19d0b11d521a2be56ecff8a8a25d09a289d4
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+
+COCOAPODS: 0.39.0

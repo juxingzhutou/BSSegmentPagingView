@@ -1,5 +1,6 @@
 # Xcode
 #
+*.xcworkspace
 .DS_Store
 build/
 *.pbxuser

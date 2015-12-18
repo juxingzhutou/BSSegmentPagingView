@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		181C1FE01C23A6AC00F7AED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C1FDF1C23A6AC00F7AED7 /* main.m */; };
+		181C1FE31C23A6AC00F7AED7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C1FE21C23A6AC00F7AED7 /* AppDelegate.m */; };
+		181C1FE61C23A6AC00F7AED7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C1FE51C23A6AC00F7AED7 /* ViewController.m */; };
+		181C1FEB1C23A6AC00F7AED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181C1FEA1C23A6AC00F7AED7 /* Assets.xcassets */; };
+		181C1FFB1C23A79300F7AED7 /* BSSegmentPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C1FFA1C23A79300F7AED7 /* BSSegmentPagingView.m */; };
+		18EB48821C23E4D5002A6589 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB48811C23E4D5002A6589 /* Launch Screen.storyboard */; };
+		18EB48851C23E6BB002A6589 /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB48841C23E6BB002A6589 /* SecondPageViewController.m */; };
+		214FDEF7EE8AFBDCFDC5E703 /* libPods-BSSegmentPagingViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3948BDE53B227B90C41C3FE1 /* libPods-BSSegmentPagingViewDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		181C1FDB1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSSegmentPagingViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		181C1FDF1C23A6AC00F7AED7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		181C1FE11C23A6AC00F7AED7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		181C1FE21C23A6AC00F7AED7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		181C1FE41C23A6AC00F7AED7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		181C1FE51C23A6AC00F7AED7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		181C1FEA1C23A6AC00F7AED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		181C1FEF1C23A6AC00F7AED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181C1FF91C23A79300F7AED7 /* BSSegmentPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSegmentPagingView.h; sourceTree = "<group>"; };
+		181C1FFA1C23A79300F7AED7 /* BSSegmentPagingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSegmentPagingView.m; sourceTree = "<group>"; };
+		18EB48811C23E4D5002A6589 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		18EB48831C23E6BB002A6589 /* SecondPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondPageViewController.h; sourceTree = "<group>"; };
+		18EB48841C23E6BB002A6589 /* SecondPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondPageViewController.m; sourceTree = "<group>"; };
+		3948BDE53B227B90C41C3FE1 /* libPods-BSSegmentPagingViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSSegmentPagingViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4924417E38A61FDCE5D30EBE /* Pods-BSSegmentPagingViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSSegmentPagingViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSSegmentPagingViewDemo/Pods-BSSegmentPagingViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AC83229312BB3C69F16B4A38 /* Pods-BSSegmentPagingViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSSegmentPagingViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSSegmentPagingViewDemo/Pods-BSSegmentPagingViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		181C1FD81C23A6AC00F7AED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				214FDEF7EE8AFBDCFDC5E703 /* libPods-BSSegmentPagingViewDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		181C1FD21C23A6AC00F7AED7 = {
+			isa = PBXGroup;
+			children = (
+				181C1FF51C23A6F000F7AED7 /* BSSegmentPagingView */,
+				181C1FDD1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo */,
+				181C1FDC1C23A6AC00F7AED7 /* Products */,
+				B87D1ED24C3F4FEA8DF7DBC9 /* Pods */,
+				1F73EE3EB9E84B0703C1CA76 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		181C1FDC1C23A6AC00F7AED7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				181C1FDB1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		181C1FDD1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				181C1FE11C23A6AC00F7AED7 /* AppDelegate.h */,
+				181C1FE21C23A6AC00F7AED7 /* AppDelegate.m */,
+				181C1FE41C23A6AC00F7AED7 /* ViewController.h */,
+				181C1FE51C23A6AC00F7AED7 /* ViewController.m */,
+				18EB48831C23E6BB002A6589 /* SecondPageViewController.h */,
+				18EB48841C23E6BB002A6589 /* SecondPageViewController.m */,
+				18EB48811C23E4D5002A6589 /* Launch Screen.storyboard */,
+				181C1FEA1C23A6AC00F7AED7 /* Assets.xcassets */,
+				181C1FEF1C23A6AC00F7AED7 /* Info.plist */,
+				181C1FDE1C23A6AC00F7AED7 /* Supporting Files */,
+			);
+			path = BSSegmentPagingViewDemo;
+			sourceTree = "<group>";
+		};
+		181C1FDE1C23A6AC00F7AED7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				181C1FDF1C23A6AC00F7AED7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		181C1FF51C23A6F000F7AED7 /* BSSegmentPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				181C1FF91C23A79300F7AED7 /* BSSegmentPagingView.h */,
+				181C1FFA1C23A79300F7AED7 /* BSSegmentPagingView.m */,
+			);
+			path = BSSegmentPagingView;
+			sourceTree = "<group>";
+		};
+		1F73EE3EB9E84B0703C1CA76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3948BDE53B227B90C41C3FE1 /* libPods-BSSegmentPagingViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B87D1ED24C3F4FEA8DF7DBC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4924417E38A61FDCE5D30EBE /* Pods-BSSegmentPagingViewDemo.debug.xcconfig */,
+				AC83229312BB3C69F16B4A38 /* Pods-BSSegmentPagingViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		181C1FDA1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 181C1FF21C23A6AC00F7AED7 /* Build configuration list for PBXNativeTarget "BSSegmentPagingViewDemo" */;
+			buildPhases = (
+				BD523A676418C25747867A28 /* Check Pods Manifest.lock */,
+				181C1FD71C23A6AC00F7AED7 /* Sources */,
+				181C1FD81C23A6AC00F7AED7 /* Frameworks */,
+				181C1FD91C23A6AC00F7AED7 /* Resources */,
+				873D437551C3AED2EB4F00F9 /* Embed Pods Frameworks */,
+				BA2B138222312F2A4C11792B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BSSegmentPagingViewDemo;
+			productName = BSSegmentPagingViewDemo;
+			productReference = 181C1FDB1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		181C1FD31C23A6AC00F7AED7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = bluntsword;
+				TargetAttributes = {
+					181C1FDA1C23A6AC00F7AED7 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 181C1FD61C23A6AC00F7AED7 /* Build configuration list for PBXProject "BSSegmentPagingViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 181C1FD21C23A6AC00F7AED7;
+			productRefGroup = 181C1FDC1C23A6AC00F7AED7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				181C1FDA1C23A6AC00F7AED7 /* BSSegmentPagingViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		181C1FD91C23A6AC00F7AED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18EB48821C23E4D5002A6589 /* Launch Screen.storyboard in Resources */,
+				181C1FEB1C23A6AC00F7AED7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		873D437551C3AED2EB4F00F9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSSegmentPagingViewDemo/Pods-BSSegmentPagingViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2B138222312F2A4C11792B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSSegmentPagingViewDemo/Pods-BSSegmentPagingViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD523A676418C25747867A28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		181C1FD71C23A6AC00F7AED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18EB48851C23E6BB002A6589 /* SecondPageViewController.m in Sources */,
+				181C1FFB1C23A79300F7AED7 /* BSSegmentPagingView.m in Sources */,
+				181C1FE61C23A6AC00F7AED7 /* ViewController.m in Sources */,
+				181C1FE31C23A6AC00F7AED7 /* AppDelegate.m in Sources */,
+				181C1FE01C23A6AC00F7AED7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		181C1FF01C23A6AC00F7AED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		181C1FF11C23A6AC00F7AED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		181C1FF31C23A6AC00F7AED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4924417E38A61FDCE5D30EBE /* Pods-BSSegmentPagingViewDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BSSegmentPagingViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.BSSegmentPagingViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		181C1FF41C23A6AC00F7AED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC83229312BB3C69F16B4A38 /* Pods-BSSegmentPagingViewDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BSSegmentPagingViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.BSSegmentPagingViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		181C1FD61C23A6AC00F7AED7 /* Build configuration list for PBXProject "BSSegmentPagingViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C1FF01C23A6AC00F7AED7 /* Debug */,
+				181C1FF11C23A6AC00F7AED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181C1FF21C23A6AC00F7AED7 /* Build configuration list for PBXNativeTarget "BSSegmentPagingViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C1FF31C23A6AC00F7AED7 /* Debug */,
+				181C1FF41C23A6AC00F7AED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 181C1FD31C23A6AC00F7AED7 /* Project object */;
+}
