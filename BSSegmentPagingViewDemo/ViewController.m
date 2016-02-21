@@ -10,8 +10,14 @@
 #import "BSSegmentPagingView.h"
 #import "Masonry.h"
 #import "SecondPageViewController.h"
+#import "DZNSegmentedControl.h"
 
-@interface ViewController () <BSSegmentPagingViewDataSource>
+#define ColorWithRGB(r, g, b) [UIColor colorWithRed: (r) / 255.0f green: (g) / 255.0f blue: (b) / 255.0f alpha:1.0]
+
+@interface ViewController () <BSSegmentPagingViewDataSource, BSSegmentPagingViewDelegate>
+
+@property (weak, nonatomic) DZNSegmentedControl *segmentControl;
+@property (weak, nonatomic) BSSegmentPagingView *pagingView;
 
 @end
 
@@ -23,15 +29,61 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self setupTopSegment];
+    
     BSSegmentPagingView *pagingView = [[BSSegmentPagingView alloc] init];
     [self.view addSubview:pagingView];
     [pagingView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(20, 0, 0, 0));
+        make.top.equalTo(self.segmentControl.mas_bottom);
+        make.bottom.left.right.equalTo(self.view);
     }];
     pagingView.dataSource = self;
+    pagingView.delegate = self;
+    self.pagingView = pagingView;
 }
 
-#pragma mark - BSSegmentPagingViewDataSource
+#pragma - mark Setup Methods
+
+- (void)setupTopSegment {
+    DZNSegmentedControl *segmentControl = [[DZNSegmentedControl alloc] initWithItems:@[@"1", @"2", @"3"]];
+    self.segmentControl = segmentControl;
+    [self.view addSubview:segmentControl];
+    
+    [segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(20);
+        make.left.right.equalTo(self.view);
+    }];
+    
+    segmentControl.bouncySelectionIndicator = YES;
+    segmentControl.adjustsFontSizeToFitWidth = NO;
+    segmentControl.autoAdjustSelectionIndicatorWidth = NO;
+    segmentControl.showsCount = NO;
+    
+    [segmentControl setBackgroundColor:[UIColor whiteColor]];
+    [segmentControl setTintColor:ColorWithRGB(0, 122, 255)];
+    [segmentControl setHairlineColor:ColorWithRGB(153, 153, 153)];
+    [segmentControl setFont:[UIFont systemFontOfSize:13.0]];
+    [segmentControl setSelectionIndicatorHeight:1.5];
+    [segmentControl setAnimationDuration:0.125];
+    
+    [self.segmentControl addTarget:self action:@selector(handleSegmentAction:) forControlEvents:UIControlEventValueChanged];
+    
+    self.segmentControl.selectedSegmentIndex = 0;
+}
+
+#pragma - mark Actions
+
+- (void)handleSegmentAction:(DZNSegmentedControl *)topSegment {
+    [self.pagingView scrollToPage:topSegment.selectedSegmentIndex];
+}
+
+#pragma - mark BSSegmentPagingViewDelegate
+
+- (void)bsPagingView:(BSSegmentPagingView *)pagingView didScrollToPage:(NSUInteger)pageIndex {
+    self.segmentControl.selectedSegmentIndex = pageIndex;
+}
+
+#pragma - mark BSSegmentPagingViewDataSource
 
 - (NSUInteger)numberOfPageInPagingView:(BSSegmentPagingView *)pagingView {
     return 3;
@@ -62,10 +114,6 @@
     }
     
     return view;
-}
-
-- (NSString *)titleInSegmentAtIndex:(NSUInteger)index {
-    return [[NSNumber numberWithUnsignedInteger:index] stringValue];
 }
 
 @end

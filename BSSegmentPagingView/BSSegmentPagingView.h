@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DZNSegmentedControl.h"
 
 @class BSSegmentPagingView;
 
@@ -16,16 +15,22 @@
 @required
 - (NSUInteger)numberOfPageInPagingView:(BSSegmentPagingView *)pagingView;
 - (UIView *)pageAtIndex:(NSUInteger)index;
-- (NSString *)titleInSegmentAtIndex:(NSUInteger)index;
+
+@end
+
+@protocol BSSegmentPagingViewDelegate <NSObject>
+
+@optional
+- (void)bsPagingView:(BSSegmentPagingView *)pagingView didScrollToPage:(NSUInteger)pageIndex;
 
 @end
 
 @interface BSSegmentPagingView : UIView
 
-@property (weak, nonatomic) DZNSegmentedControl *segmentControl;
-
-@property (weak, nonatomic) id<BSSegmentPagingViewDataSource> dataSource;
+@property (weak, nonatomic) id<BSSegmentPagingViewDataSource>   dataSource;
+@property (weak, nonatomic) id<BSSegmentPagingViewDelegate>     delegate;
 
 - (void)reloadData;
+- (void)scrollToPage:(NSInteger)pageIndex;
 
 @end

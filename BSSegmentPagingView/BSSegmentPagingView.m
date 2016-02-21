@@ -9,8 +9,6 @@
 #import "BSSegmentPagingView.h"
 #import "Masonry.h"
 
-#define ColorWithRGB(r, g, b) [UIColor colorWithRed: (r) / 255.0f green: (g) / 255.0f blue: (b) / 255.0f alpha:1.0]
-
 @interface BSSegmentPagingView () <UIScrollViewDelegate>
 
 @property (readonly, nonatomic) NSUInteger    numberOfPagesInScrollView;
@@ -46,14 +44,11 @@
 }
 
 - (void)initializer {
-    [self setupTopSegment];
-    
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     [self addSubview:scrollView];
     self.scrollView = scrollView;
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self);
-        make.top.equalTo(self.segmentControl.mas_bottom);
+        make.edges.equalTo(self);
     }];
     
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -62,72 +57,23 @@
     scrollView.delegate = self;
 }
 
-#pragma mark - Setup Methods
-
-- (void)setupTopSegment {
-    DZNSegmentedControl *segmentControl = [[DZNSegmentedControl alloc] init];
-    self.segmentControl = segmentControl;
-    [self addSubview:segmentControl];
-    
-    [segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top);
-        make.left.equalTo(self.mas_left);
-        make.right.equalTo(self.mas_right);
-    }];
-    
-    segmentControl.bouncySelectionIndicator = YES;
-    segmentControl.adjustsFontSizeToFitWidth = NO;
-    segmentControl.autoAdjustSelectionIndicatorWidth = NO;
-    segmentControl.showsCount = NO;
-    
-    [segmentControl setBackgroundColor:[UIColor whiteColor]];
-    [segmentControl setTintColor:ColorWithRGB(0, 122, 255)];
-    [segmentControl setHairlineColor:ColorWithRGB(153, 153, 153)];
-    [segmentControl setFont:[UIFont systemFontOfSize:13.0]];
-    [segmentControl setSelectionIndicatorHeight:1.5];
-    [segmentControl setAnimationDuration:0.125];
-    
-    [self setupSegmentControlAction];
-    self.segmentControl.selectedSegmentIndex = 0;
-}
-
-- (void)setupSegmentControlAction {
-    [self.segmentControl addTarget:self action:@selector(handleSegmentAction:) forControlEvents:UIControlEventValueChanged];
-}
+#pragma - mark Actions
 
 - (void)reloadData {
     _numberOfPagesInScrollView = [self.dataSource numberOfPageInPagingView:self];
-    NSMutableArray *segmentTitles = [NSMutableArray array];
-    for (int i = 0; i < self.numberOfPagesInScrollView; ++i) {
-        NSString *title = [self.dataSource titleInSegmentAtIndex:i];
-        NSAssert(title != nil, @"Segment title return by BSSegmentPagingViewDataSource must be not nil.");
-        [segmentTitles addObject:title];
-    }
-    self.segmentControl.items = segmentTitles;
+    
     [self setupScrollViewWithPageCount:self.numberOfPagesInScrollView];
 }
 
-#pragma mark - Actions
-
-- (void)handleSegmentAction:(DZNSegmentedControl *)topSegment {
-    [self.scrollView setContentOffset:CGPointMake(topSegment.selectedSegmentIndex * self.scrollView.frame.size.width, 0) animated:YES];
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSInteger currentPageIndex = floor((scrollView.contentOffset.x - CGRectGetWidth(scrollView.frame) / 2) / CGRectGetWidth(scrollView.frame)) + 1;
-    currentPageIndex = currentPageIndex > 0 ? currentPageIndex : 0;
-    [self loadPageAtIndex:currentPageIndex];
-    
-    if (scrollView.dragging || scrollView.decelerating) {
-        [self.segmentControl removeTarget:self action:NULL forControlEvents:UIControlEventValueChanged];
-        self.segmentControl.selectedSegmentIndex = currentPageIndex;
-        [self setupSegmentControlAction];
+- (void)scrollToPage:(NSInteger)pageIndex {
+    if (pageIndex < 0) {
+        return;
     }
+    
+    [self.scrollView setContentOffset:CGPointMake(pageIndex * self.scrollView.frame.size.width, 0) animated:YES];
 }
 
-#pragma mark - Accessors
+#pragma - mark Accessors
 
 - (void)setDataSource:(id<BSSegmentPagingViewDataSource>)dataSource {
     _dataSource = dataSource;
@@ -135,7 +81,21 @@
     [self reloadData];
 }
 
-#pragma makr - Internal Methods
+#pragma - mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger currentPageIndex = floor((scrollView.contentOffset.x - CGRectGetWidth(scrollView.frame) / 2) / CGRectGetWidth(scrollView.frame)) + 1;
+    currentPageIndex = currentPageIndex > 0 ? currentPageIndex : 0;
+    [self loadPageAtIndex:currentPageIndex];
+    
+    if (scrollView.dragging || scrollView.decelerating) {
+        if ([self.delegate respondsToSelector:@selector(bsPagingView:didScrollToPage:)]) {
+            [self.delegate bsPagingView:self didScrollToPage:currentPageIndex];
+        }
+    }
+}
+
+#pragma makr - Private Methods
 
 - (void)loadPageAtIndex:(NSUInteger)index {
     if (index >= self.numberOfPagesInScrollView
