@@ -70,6 +70,7 @@
         return;
     }
     
+    [self.scrollView layoutIfNeeded];
     [self.scrollView setContentOffset:CGPointMake(pageIndex * self.scrollView.frame.size.width, 0) animated:YES];
 }
 

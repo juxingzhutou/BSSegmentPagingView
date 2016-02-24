@@ -29,17 +29,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [self setupTopSegment];
-    
     BSSegmentPagingView *pagingView = [[BSSegmentPagingView alloc] init];
     [self.view addSubview:pagingView];
     [pagingView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.segmentControl.mas_bottom);
         make.bottom.left.right.equalTo(self.view);
     }];
     pagingView.dataSource = self;
     pagingView.delegate = self;
     self.pagingView = pagingView;
+    
+    [self setupTopSegment];
 }
 
 #pragma - mark Setup Methods
@@ -52,6 +51,7 @@
     [segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(20);
         make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.pagingView.mas_top);
     }];
     
     segmentControl.bouncySelectionIndicator = YES;
@@ -68,7 +68,8 @@
     
     [self.segmentControl addTarget:self action:@selector(handleSegmentAction:) forControlEvents:UIControlEventValueChanged];
     
-    self.segmentControl.selectedSegmentIndex = 0;
+    self.segmentControl.selectedSegmentIndex = 2;
+    [self handleSegmentAction:self.segmentControl];
 }
 
 #pragma - mark Actions
