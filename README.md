@@ -17,11 +17,6 @@ or
 1. Copy `BSSegmentPagingView` folder to project;
 2. Install `Masonry` via CocoaPods or other way.
 
-## How To Use Demo
-
-1. Run command 'pod install' in root directory of this repo;
-2. Open 'BSSegmentPagingViewDemo.xcworkspace'.
-
 ## How To Use
 
 ### Step 1

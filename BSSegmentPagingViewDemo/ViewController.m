@@ -75,7 +75,7 @@
 #pragma - mark Actions
 
 - (void)handleSegmentAction:(DZNSegmentedControl *)topSegment {
-    [self.pagingView scrollToPage:topSegment.selectedSegmentIndex];
+    self.pagingView.selectedIndex = topSegment.selectedSegmentIndex;
 }
 
 #pragma - mark BSSegmentPagingViewDelegate

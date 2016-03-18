@@ -27,10 +27,10 @@
 
 @interface BSSegmentPagingView : UIView
 
+@property (assign, nonatomic) NSInteger selectedIndex;
 @property (weak, nonatomic) id<BSSegmentPagingViewDataSource>   dataSource;
 @property (weak, nonatomic) id<BSSegmentPagingViewDelegate>     delegate;
 
 - (void)reloadData;
-- (void)scrollToPage:(NSInteger)pageIndex;
 
 @end

@@ -22,14 +22,6 @@
 
 @implementation BSSegmentPagingView
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self initializer];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -38,9 +30,13 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    [self initializer];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initializer];
+    }
+    
+    return self;
 }
 
 - (void)initializer {
@@ -65,21 +61,29 @@
     [self setupScrollViewWithPageCount:self.numberOfPagesInScrollView];
 }
 
-- (void)scrollToPage:(NSInteger)pageIndex {
-    if (pageIndex < 0) {
-        return;
-    }
-    
-    [self.scrollView layoutIfNeeded];
-    [self.scrollView setContentOffset:CGPointMake(pageIndex * self.scrollView.frame.size.width, 0) animated:YES];
-}
-
 #pragma - mark Accessors
 
 - (void)setDataSource:(id<BSSegmentPagingViewDataSource>)dataSource {
     _dataSource = dataSource;
     
     [self reloadData];
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    if (selectedIndex < 0 || selectedIndex >= self.numberOfPagesInScrollView) {
+        return;
+    }
+    
+    [self.scrollView layoutIfNeeded];
+    [self.scrollView setContentOffset:CGPointMake(selectedIndex * self.scrollView.frame.size.width, 0) animated:YES];
+}
+
+- (NSInteger)selectedIndex {
+    if (self.scrollView.frame.size.width < 0.0001) {
+        return 0;
+    }
+    
+    return self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
 }
 
 #pragma - mark UIScrollViewDelegate
